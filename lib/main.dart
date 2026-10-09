@@ -68,3 +68,57 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+class DishCard extends StatelessWidget {
+  final Dish dish;
+
+  const DishCard({super.key, required this.dish});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 140,
+            width: double.infinity,
+            child: Image.network(
+              dish.imageUrl,
+              fit: BoxFit.cover,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      dish.name,
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                    Text(
+                      '${dish.priceTTC.toStringAsFixed(2)} € (TVA 5.8%)',
+                      style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.deepOrange),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  dish.description,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(color: Colors.grey),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
