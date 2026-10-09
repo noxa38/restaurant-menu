@@ -29,6 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final filteredDishes = dishes.where((dish) => dish.category == selectedCategory).toList();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Menu du Restaurant'),
@@ -59,8 +61,11 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           Expanded(
-            child: Center(
-              child: Text('Catégorie sélectionnée : $selectedCategory'),
+            child: ListView.builder(
+              itemCount: filteredDishes.length,
+              itemBuilder: (context, index) {
+                return DishCard(dish: filteredDishes[index]);
+              },
             ),
           ),
         ],
@@ -77,7 +82,7 @@ class DishCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.all(8.0),
+      margin: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
