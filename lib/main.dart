@@ -34,8 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Menu du Restaurant'),
-      ),
-      body: SafeArea(
+      ), fait body: SafeArea(
         child: Column(
           children: [
             SizedBox(
@@ -94,6 +93,12 @@ class DishCard extends StatelessWidget {
             child: Image.network(
               dish.imageUrl,
               fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return Container(
+                  color: Colors.grey[300],
+                  child: const Icon(Icons.fastfood, color: Colors.grey),
+                );
+              },
             ),
           ),
           Padding(

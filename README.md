@@ -1,17 +1,15 @@
-# louis_faure_restaurant
+# Menu du Restaurant - Flutter TP
 
-A new Flutter project.
+Application mobile développée avec Flutter dans le cadre du TP "Layouts & Scrolls – Menu d’un restaurant".
 
-## Getting Started
+## Fonctionnalités
 
-This project is a starting point for a Flutter application.
+- Navigation par catégories avec défilement horizontal (Formules, Entrées, Plats, Desserts, Boissons, T-shirts).
+- Affichage dynamique des plats par catégorie dans une liste verticale.
+- Cartes visuelles (`Card`) réutilisables incluant image, nom, description et prix TTC (avec TVA obligatoire de 5,8%).
+- Design responsive adapté aux modes portrait et paysage.
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter / Dart
+- Material 3
